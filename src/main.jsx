@@ -19,7 +19,7 @@ import UserDashboard from './Components/User/UserDashboard.jsx';
 import SellerDashboard from './Components/Seller/SellerDashboard.jsx';
 import ProductsAddPage from './Pages/Seller/ProductsAddPage.jsx';
 import DisplayProducts from './Components/User/DisplayProducts.jsx';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, useBreakpointValue } from '@chakra-ui/react';
 import ProductsViewPage from './Pages/Seller/ProductsViewPage.jsx';
 import AdminDashboard from './Components/Admin/AdminDashboard.jsx';
 import UsersView from './Components/Admin/UsersView.jsx';
@@ -237,11 +237,11 @@ const router = createBrowserRouter([
       }
     ]
   },
+
+
   {
     element: <AdminLayout />,
 
-   
-      
     
     children: [
       {
@@ -279,10 +279,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     
     <React.StrictMode>
        <Provider store={store}>
-       {/* <ChakraProvider theme={chakraTheme}> */}
+       <ChakraProvider>
         <RouterProvider router={router} />
 
-      {/* </ChakraProvider> */}
+      </ChakraProvider>
        </Provider>
       
 

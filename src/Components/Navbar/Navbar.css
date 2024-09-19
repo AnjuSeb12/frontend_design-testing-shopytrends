@@ -40,6 +40,20 @@
   background-color: white !important;
 
  }
+ .navbar {
+  transition: background-color 0.3s ease;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: white;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
   
   
   
