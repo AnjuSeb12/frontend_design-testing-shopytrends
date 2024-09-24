@@ -201,7 +201,7 @@ const CartAdding = () => {
         }
       } catch (error) {
         console.error('Error fetching cart:', error);
-        toast.error('Failed to load cart items.');
+        // toast.error('Failed to load cart items.');
       } finally {
         setLoading(false);
       }
