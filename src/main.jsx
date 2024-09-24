@@ -48,6 +48,7 @@ import store from './redux/store.jsx';
 import SellerRoutes from './Components/ProtectedRoutes/SellerRoutes.jsx';
 import MyProfileUpdate from './Components/User/MyProfileUpdate.jsx';
 import MyProfileUpdateSeller from './Components/Seller/MyProfileUpdateSeller.jsx';
+import SellerOrderList from './Components/Seller/SellerOrderList.jsx';
 
 
 
@@ -234,6 +235,10 @@ const router = createBrowserRouter([
             <MyProfileUpdateSeller/>
             </SellerRoutes>
         )
+      },
+      {
+        path:"seller/sellerorder",
+        element:<SellerOrderList/>
       }
     ]
   },

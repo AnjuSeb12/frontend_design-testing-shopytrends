@@ -139,6 +139,7 @@ const SellerNavbar = () => {
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/seller/productsadd">Start Selling</Nav.Link>
             <Nav.Link as={Link} to="/seller/productsview">Products View</Nav.Link>
+            <Nav.Link as={Link} to="/seller/sellerorder">User Order</Nav.Link>
             <Nav.Link as={Link} to="/seller/sellerupdate">My Profile</Nav.Link>
           </Nav>
           <Nav className="ms-auto d-flex align-items-center">
