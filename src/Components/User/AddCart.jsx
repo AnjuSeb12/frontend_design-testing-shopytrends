@@ -20,7 +20,7 @@ const AddCart = ({ product, quantity = 1, disabled }) => {
       toast.success('Item added to cart successfully!');
     } catch (error) {
       console.error('Error adding product to cart:', error);
-      toast.error('Failed to add item to cart.');
+      // toast.error('Failed to add item to cart.');
     } finally {
       setIsAdding(false);
     }
