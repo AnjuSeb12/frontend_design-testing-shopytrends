@@ -238,7 +238,10 @@ const router = createBrowserRouter([
       },
       {
         path:"seller/sellerorder",
-        element:<SellerOrderList/>
+        element:(
+        <SellerRoutes>
+          <SellerOrderList/>
+        </SellerRoutes>)
       }
     ]
   },
