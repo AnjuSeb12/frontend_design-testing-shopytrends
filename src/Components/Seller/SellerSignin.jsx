@@ -261,7 +261,7 @@ const SellerSignin = () => {
         localStorage.setItem('sellerToken', response.data.token);
         localStorage.setItem('seller', JSON.stringify(response.data.seller));
 
-        toast.success('Login successful!', { autoClose: 3000 });
+        toast.success('Login successfull!', { autoClose: 3000 });
 
         const role = response.data.seller.role;
         if (role === 'seller') {

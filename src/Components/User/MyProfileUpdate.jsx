@@ -19,7 +19,7 @@ const schema = yup.object({
 
 const MyProfileUpdate = () => {
     const navigate = useNavigate();
-    const isDarkMode = useSelector((state) => state.theme.isDarkMode); // Get dark mode status from Redux
+    const isDarkMode = useSelector((state) => state.theme.isDarkMode); 
     
     const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
 
