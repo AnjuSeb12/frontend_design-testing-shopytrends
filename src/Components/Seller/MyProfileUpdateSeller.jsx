@@ -19,9 +19,9 @@ const schema = yup.object({
 
 const MyProfileUpdateSeller= () => {
     const navigate = useNavigate();
-    const isDarkMode = useSelector((state) => state.theme.isDarkMode); // Get dark mode status from Redux
+    const isDarkMode = useSelector((state) => state.theme.isDarkMode); 
     
-    const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+    const [showPassword, setShowPassword] = useState(false); 
 
     const {
         register,
@@ -34,7 +34,7 @@ const MyProfileUpdateSeller= () => {
             const res = await instance.put("/api/v1/seller/sellerupdate", data, { withCredentials: true });
             if (res.data.success) {
                 toast.success(res.data.message, { autoClose: 2000 });
-                navigate("/seller/sellerupdate"); // Redirect to profile after update
+                navigate("/seller/sellerupdate"); 
             } else {
                 toast.error(res.data.message, { autoClose: 2000 });
             }
@@ -43,8 +43,8 @@ const MyProfileUpdateSeller= () => {
         }
     };
 
-    // Set icon color based on dark mode state
-    const iconColor = isDarkMode ? '#ffffff' : '#000000'; // White for dark mode, black for light mode
+ 
+    const iconColor = isDarkMode ? '#ffffff' : '#000000'; 
 
     return (
         <div className={`min-h-screen ${isDarkMode ? "bg-gray-900" : "bg-gray-100"} flex items-center justify-center`}>

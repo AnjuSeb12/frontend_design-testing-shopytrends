@@ -257,7 +257,7 @@ const SellerSignin = () => {
       );
 
       if (response.data.success) {
-        // Save token and seller data in localStorage
+        
         localStorage.setItem('sellerToken', response.data.token);
         localStorage.setItem('seller', JSON.stringify(response.data.seller));
 

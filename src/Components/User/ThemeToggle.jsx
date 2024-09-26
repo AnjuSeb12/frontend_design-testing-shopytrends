@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../../redux/ThemeSlice.js' // Adjust the path as necessary
-import { FaMoon, FaSun } from 'react-icons/fa'; // Icons for light and dark modes
+import { toggleTheme } from '../../redux/ThemeSlice.js' 
+import { FaMoon, FaSun } from 'react-icons/fa'; 
 
 const ThemeToggle = () => {
   const dispatch = useDispatch();

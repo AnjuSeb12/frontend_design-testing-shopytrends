@@ -75,7 +75,7 @@ const SellerProductsView = () => {
     getAllSellerProducts();
   }, []);
 
-  // Conditional styling based on isDarkMode
+  
   const containerClass = isDarkMode ? 'bg-gray-900' : 'bg-gray-100';
   const cardBackgroundColor = isDarkMode ? 'bg-gray-800' : 'bg-white';
   const textColor = isDarkMode ? 'text-gray-100' : 'text-gray-800';

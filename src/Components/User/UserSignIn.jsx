@@ -14,7 +14,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 
 
-// Validation schema using Yup
+
 const schema = yup.object({
   email: yup.string().email('Invalid email format').required('Email is required'),
   password: yup
@@ -32,12 +32,12 @@ const UserSignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
 
-  // Toggle password visibility
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  // Handle form submission
+
   const onSubmit = async (data) => {
     try {
       const response = await instance.post(
@@ -50,14 +50,14 @@ const UserSignIn = () => {
         localStorage.setItem('userToken', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
 
-        // Show success message with custom auto-close time and pause on hover
+        
         toast.success(response.data.message, { autoClose: 10000, pauseOnHover: true });
 
-        // Redirect after a 3-second delay
+       
         setTimeout(() => {
           navigate('/', { replace: true });
           window.location.reload();
-        }, 3000); // Delay of 3 seconds before navigation
+        }, 3000); 
       } else {
         toast.error(response.data.message, { autoClose: 2000 });
       }

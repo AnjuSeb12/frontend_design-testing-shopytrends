@@ -108,13 +108,13 @@ const SearchResult = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const location = useLocation();  // Use location to listen for query changes
+  const location = useLocation();  
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
   useEffect(() => {
     const fetchResults = async () => {
-      const queryParams = new URLSearchParams(location.search); // Fetch query from URL
-      const query = queryParams.get('query') || '';  // Get 'query' parameter
+      const queryParams = new URLSearchParams(location.search);
+      const query = queryParams.get('query') || ''; 
 
       if (query.trim()) {
         try {
@@ -124,17 +124,17 @@ const SearchResult = () => {
           setResults(response.data.searchItem || []);
         } catch (error) {
           console.error('Error fetching search results:', error);
-          setResults([]);  // Handle error by setting an empty array
+          setResults([]);  
         }
       } else {
-        setResults([]);  // If no query, set an empty array
+        setResults([]);  
       }
 
       setLoading(false);
     };
 
-    fetchResults(); // Call the fetch function on initial load or query change
-  }, [location.search]);  // Trigger re-fetch when search query changes
+    fetchResults(); 
+  }, [location.search]);  
 
   const handlePayNow = (product) => {
     navigate('/order-form', { state: { product } });
@@ -155,15 +155,15 @@ const SearchResult = () => {
             {results.map((item) => (
               <Card
                 key={item._id}
-                className={`${cardClass} shadow-lg rounded-lg overflow-hidden border ${cardBorderClass}`}  // Card styles
-                style={{ height: '450px' }}  // Fixed card height
+                className={`${cardClass} shadow-lg rounded-lg overflow-hidden border ${cardBorderClass}`}  
+                style={{ height: '450px' }} 
               >
                 <Link to={`/product/${item._id}`}>
                   <Card.Img
                     variant="top"
                     src={item.image}
                     alt={item.title}
-                    className="h-64 object-cover"  // Fixed height and cover image
+                    className="h-64 object-cover"  
                   />
                 </Link>
                 <Card.Body className="d-flex flex-column">
@@ -174,8 +174,8 @@ const SearchResult = () => {
                     Stock: {item.stock > 0 ? item.stock : "Out of Stock"}
                   </Card.Text>
 
-                  <div className="mt-auto flex flex-col items-center space-y-4">  {/* Space between items and sticks to the bottom */}
-                    <div className="d-flex justify-content-center space-x-4"> {/* Horizontal space between buttons */}
+                  <div className="mt-auto flex flex-col items-center space-y-4">  
+                    <div className="d-flex justify-content-center space-x-4">
                       <AddCart product={item} disabled={item.stock <= 0} />
                       <Button
                         variant={buttonVariant}
@@ -186,7 +186,7 @@ const SearchResult = () => {
                         Pay Now
                       </Button>
                     </div>
-                    <div className="h-10" /> {/* Explicit height for spacing */}
+                    <div className="h-10" /> 
                   </div>
                 </Card.Body>
               </Card>

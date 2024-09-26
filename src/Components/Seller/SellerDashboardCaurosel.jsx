@@ -21,7 +21,7 @@ const SellerDashboardCaurosel = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
    
   
