@@ -61,17 +61,18 @@ const SellerNavbar = () => {
 
   const handleLogout = async () => {
     try {
-      // Remove token and navigate immediately
+      
       localStorage.removeItem('sellerToken');
+      localStorage.removeItem('seller');
       setIsAuthenticated(false);
       navigate('/seller/signup');
   
-      // Now send the logout request
+      
       const response = await instance.post('/api/v1/seller/logout', {}, { withCredentials: true });
   
       if (!response.data.success) {
         console.error('Logout failed:', response.data.message);
-        // Optionally re-authenticate if needed
+        
       }
     } catch (error) {
       console.error('Logout request failed:', error);
